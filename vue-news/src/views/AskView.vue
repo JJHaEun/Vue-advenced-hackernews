@@ -13,6 +13,7 @@ export default {
     };
   },
   created() {
+    // 컴포넌트가 실행되자마자 실행되는 로직들어감.
     getAskList().then(res => (this.asks = res.data));
   },
 };
