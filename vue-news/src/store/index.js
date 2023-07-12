@@ -20,17 +20,17 @@ export const store = new Vuex.Store({
         })
         .catch(error => console.log(error));
     },
-    FETCH_ASKS_LIST(context) {
+    FETCH_ASKS_LIST({ commit }) {
       getAskList()
-        .then(res => {
-          context.commit("SET_ASKS", res.data);
+        .then(({ data }) => {
+          commit("SET_ASKS", data);
         })
         .catch(error => console.log(error));
     },
-    FETCH_JOBS_LIST(context) {
+    FETCH_JOBS_LIST({ commit }) {
       getJobs()
-        .then(res => {
-          context.commit("SET_JOBS", res.data);
+        .then(({ data }) => {
+          commit("SET_JOBS", data);
         })
         .catch(error => console.log(error));
     },
