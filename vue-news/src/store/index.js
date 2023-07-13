@@ -15,6 +15,12 @@ export const store = new Vuex.Store({
     fetchNews(state) {
       return state.news;
     },
+    fetchAsk(state) {
+      return state.asks;
+    },
+    fetchJobs({ jobs }) {
+      return jobs;
+    },
   },
   actions,
   mutations,

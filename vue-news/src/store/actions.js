@@ -13,6 +13,7 @@ export default {
     getAskList()
       .then(({ data }) => {
         commit("SET_ASKS", data);
+        console.log(data);
       })
       .catch(error => console.log(error));
   },

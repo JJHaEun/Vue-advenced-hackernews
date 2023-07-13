@@ -1,8 +1,13 @@
 <template>
   <div>
-    <div v-for="(news, i) in fetchNews" :key="i">
-      {{ news.title }}
-    </div>
+    <p v-for="(news, i) in fetchNews" :key="i">
+      <!-- news에 있는 data를 href애 연결 => v-bind사용 => v-bind:href="news.url" 또는 :href="news.url" -->
+      <a :href="news.url">{{ news.title }}</a>
+      <small
+        >{{ news.time_ago }} by
+        <router-link :to="`/user/${news.user}`">{{ news.user }}</router-link>
+      </small>
+    </p>
   </div>
 </template>
 
