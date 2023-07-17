@@ -18,11 +18,11 @@ import { mapGetters } from "vuex";
 export default {
   computed: {
     // ...mapState({
-    //   ask: state => state.ask, //
+    //  방법 1 => ask: state => state.ask, //
     //   // ask라는 변수에 state를가지고, ask를 담음.
     // }),
     // ...mapGetters({
-    //   fetchNews: "fetchNews", //fetchNews
+    //  방법 2 => fetchNews: "fetchNews", //fetchNews
     // }),
     ...mapGetters(["fetchNews"]),
   },
