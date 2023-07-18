@@ -21,4 +21,9 @@ const getJobs = () => {
 const getUserInfo = userId => {
   return axios.get(`${config.baseURL}/user/${userId}.json`);
 };
-export { getNewsList, getAskList, getJobs, getUserInfo };
+
+const getAskItems = itemId => {
+  return axios.get(`${config.baseURL}/item/${itemId}.json`);
+};
+
+export { getNewsList, getAskList, getJobs, getUserInfo, getAskItems };

@@ -11,4 +11,8 @@ export default {
   SET_USERS(state, users) {
     state.users = users;
   },
+
+  SET_ITEMS(state, items) {
+    state.items = items;
+  },
 };

@@ -35,7 +35,7 @@ export const router = new VueRouter({
       component: UserView,
     },
     {
-      path: "/items",
+      path: "/items/:itemId",
       component: ItemView,
     },
   ],
