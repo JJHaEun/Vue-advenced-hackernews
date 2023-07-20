@@ -2,10 +2,10 @@
   <div>
     <small>
       <i class="fa fa-user" aria-hidden="true"></i>
-      <p>{{ fetchUsers.id }}</p>
-      <p>{{ fetchUsers.created }}</p>
-      <p>{{ fetchUsers.karma }}</p>
-      <p>{{ fetchUsers.about }}</p>
+      <p>{{ infoUser.id }}</p>
+      <p>{{ infoUser.created }}</p>
+      <p>{{ infoUser.karma }}</p>
+      <p>{{ infoUser.about }}</p>
     </small>
   </div>
 </template>
@@ -14,12 +14,19 @@
 // import { mapGetters } from "vuex";
 
 export default {
-  computed: {
-    // ...mapGetters(["fetchUsers"]), // this.$store.state.users
-    fetchUsers() {
-      return this.$store.state.users;
-    },
+  // 3. props로 넘겨받기
+  props: {
+    // 넘겨받은 props이름 : 타입 또는
+    infoUser: Object,
   },
+  // props:[넘겨받은 props이름]
+  //   computed: {
+  //     // 1. store에서 꺼내기 1번방법 :  ...mapGetters(["fetchUsers"]), // this.$store.state.users
+  //     // 2. store에서 꺼내기 2번 방법 :
+  // fetchUsers() {
+  //   return this.$store.state.users;
+  // },
+  //   },
 };
 </script>
 

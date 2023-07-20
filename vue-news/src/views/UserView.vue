@@ -4,7 +4,7 @@
     <p>{{ fetchUsers.created }}</p>
     <p>{{ fetchUsers.karma }}</p>
     <p>{{ fetchUsers.about }}</p> -->
-    <user-profile></user-profile>
+    <user-profile :infoUser="fetchUserInfo"></user-profile>
   </div>
 </template>
 
@@ -16,6 +16,13 @@ export default {
   components: {
     UserProfile,
   },
+  // props로 내리기
+  computed: {
+    fetchUserInfo() {
+      return this.$store.state.users;
+    },
+  },
+
   // computed: {
   //   ...mapGetters(["fetchUsers"]), // this.$store.state.users
   // },
