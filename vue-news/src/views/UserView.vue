@@ -9,16 +9,16 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+// import { mapGetters } from "vuex";
 import UserProfile from "../components/UserProfile.vue";
 
 export default {
   components: {
     UserProfile,
   },
-  computed: {
-    ...mapGetters(["fetchUsers"]),
-  },
+  // computed: {
+  //   ...mapGetters(["fetchUsers"]), // this.$store.state.users
+  // },
   // this.$route.params.id
   created() {
     const userName = this.$route.params.id;

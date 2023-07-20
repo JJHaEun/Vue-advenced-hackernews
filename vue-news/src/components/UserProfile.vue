@@ -1,19 +1,26 @@
 <template>
   <div>
     <small>
-      <p>
-        <!-- {{ items.points }} points by -->
-        <i class="fa fa-user" aria-hidden="true"></i>
-        <!-- <router-link :to="`/user/${items.user}`">
-            {{ items.user }} </router-link
-          >{{ items.time_ago }} -->
-      </p>
+      <i class="fa fa-user" aria-hidden="true"></i>
+      <p>{{ fetchUsers.id }}</p>
+      <p>{{ fetchUsers.created }}</p>
+      <p>{{ fetchUsers.karma }}</p>
+      <p>{{ fetchUsers.about }}</p>
     </small>
   </div>
 </template>
 
 <script>
-export default {};
+// import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    // ...mapGetters(["fetchUsers"]), // this.$store.state.users
+    fetchUsers() {
+      return this.$store.state.users;
+    },
+  },
+};
 </script>
 
 <style scoped>
