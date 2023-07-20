@@ -1,20 +1,20 @@
 <template>
   <div>
     <ul class="news-list">
-      <li v-for="(news, i) in fetchNews" :key="i" class="post">
+      <li v-for="(item, i) in listItems" :key="i" class="post">
         <!-- news에 있는 data를 href애 연결 => v-bind사용 => v-bind:href="news.url" 또는 :href="news.url" -->
-        <a :href="news.url">{{ news.title }}</a>
+        <!-- <a :href="news.url">{{ item.title }}</a>
         <small
           >{{ news.time_ago }} by
           <router-link :to="`/user/${news.user}`">{{ news.user }}</router-link>
-        </small>
+        </small> -->
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+// import { mapGetters } from "vuex";
 
 export default {
   computed: {
@@ -25,7 +25,20 @@ export default {
     // ...mapGetters({
     //  방법 2 => fetchNews: "fetchNews", //fetchNews
     // }),
-    ...mapGetters(["fetchNews"]),
+    // ...mapGetters(["fetchNews"]),
+    listItems() {
+      const name = this.$route.name;
+
+      if (name === "news") {
+        return this.$store.state.news;
+      } else if (name === "ask") {
+        return this.$store.state.asks;
+      } else if (name === "jobs") {
+        return this.$store.state.jobs;
+      } else {
+        return {};
+      }
+    },
   },
   created() {
     // getNewsList().then(res => (this.news = res.data));
