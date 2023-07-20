@@ -29,7 +29,16 @@ export default {
   },
   created() {
     // getNewsList().then(res => (this.news = res.data));
-    this.$store.dispatch("FETCH_NEWS_LIST");
+    const name = this.$route.name;
+
+    if (name === "news") {
+      this.$store.dispatch("FETCH_NEWS_LIST");
+    } else if (name === "ask") {
+      this.$store.dispatch("FETCH_ASKS_LIST");
+    } else if (name === "jobs") {
+      this.$store.dispatch("FETCH_JOBS_LIST");
+    }
+    console.log(this.$route);
   },
 };
 </script>

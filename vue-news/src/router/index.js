@@ -20,14 +20,17 @@ export const router = new VueRouter({
       // path 에는 url 정보가(url주소),
       // component에는 해당 컴포넌트가 들어감.(url주소로 이동했을때 표시할 컴포넌트(페이지))
       path: "/news",
+      name: "news",
       component: NewsView,
     },
     {
       path: "/ask",
+      name: "ask",
       component: AskView,
     },
     {
       path: "/jobs",
+      name: "jobs",
       component: JobsView,
     },
     {
