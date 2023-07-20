@@ -12,10 +12,10 @@
           >{{ items.time_ago }}
         </p>
       </small>
-      <div>{{ items.content }}</div>
     </section>
     <section>
       <!-- 답변  -->
+      <div v-html="items.content"></div>
     </section>
   </div>
 </template>
