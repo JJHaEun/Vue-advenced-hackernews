@@ -1,5 +1,20 @@
 <template>
   <div>
+    <list-item></list-item>
+  </div>
+</template>
+
+<script>
+import ListItem from "../components/ListItem.vue";
+export default {
+  components: {
+    ListItem,
+  },
+};
+</script>
+
+<!-- <template>
+  <div>
     <ul class="jobs-list">
       <li v-for="(jobs, i) in fetchJobs" :key="i">
         <a :href="jobs.url">{{ jobs.title }}</a>
@@ -29,4 +44,4 @@ export default {
   margin: 0;
   padding: 0;
 }
-</style>
+</style> -->
