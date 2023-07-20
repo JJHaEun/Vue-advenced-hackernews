@@ -1,9 +1,11 @@
 <template>
   <div>
-    <p v-for="(jobs, i) in fetchJobs" :key="i">
-      <a :href="jobs.url"> {{ jobs.title }}</a>
-      <small>{{ jobs.time_ago }} by {{ jobs.domain }}</small>
-    </p>
+    <ul class="jobs-list">
+      <li v-for="(jobs, i) in fetchJobs" :key="i">
+        <a :href="jobs.url">{{ jobs.title }}</a>
+        <small>{{ jobs.time_ago }} by {{ jobs.domain }}</small>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -22,4 +24,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.jobs-list {
+  margin: 0;
+  padding: 0;
+}
+</style>

@@ -1,9 +1,13 @@
 <template>
   <div>
-    <div v-for="(ask, i) in fetchAsk" :key="i">
-      <router-link v-bind:to="`/items/${ask.id}`">{{ ask.title }}</router-link>
-      <small>{{ ask.user }}</small>
-    </div>
+    <ul class="ask-list">
+      <li v-for="(ask, i) in fetchAsk" :key="i">
+        <router-link v-bind:to="`/items/${ask.id}`">
+          {{ ask.title }}
+        </router-link>
+        <small>{{ ask.user }}</small>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -23,4 +27,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.ask-list {
+  margin: 0;
+  padding: 0;
+}
+</style>
