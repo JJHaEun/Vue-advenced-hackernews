@@ -13,7 +13,8 @@ export default {
 };
 </script>
 
-<!-- <template>
+<!--
+<template>
   <div>
     <ul class="jobs-list">
       <li v-for="(jobs, i) in fetchJobs" :key="i">
