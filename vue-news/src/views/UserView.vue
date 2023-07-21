@@ -4,7 +4,10 @@
     <p>{{ fetchUsers.created }}</p>
     <p>{{ fetchUsers.karma }}</p>
     <p>{{ fetchUsers.about }}</p> -->
-    <user-profile :infoUser="fetchUserInfo"></user-profile>
+    <user-profile :infoUser="fetchUserInfo">
+      <p slot="username">{{ fetchUserInfo.id }}</p>
+      <p slot="created">{{ fetchUserInfo.created }}</p>
+    </user-profile>
   </div>
 </template>
 

@@ -6,10 +6,19 @@
       <small>
         <p>
           {{ items.points }} points by
-          <i class="fa fa-user" aria-hidden="true"></i>
+          <!-- <i class="fa fa-user" aria-hidden="true"></i>
           <router-link :to="`/user/${items.user}`">
-            {{ items.user }} </router-link
-          >{{ items.time_ago }}
+            {{ items.user }}
+             </router-link> -->
+          <!-- {{ items.time_ago }} -->
+          <user-profile :infoUser="items">
+            <div slot="username">
+              <router-link :to="`/user/${items.user}`">
+                {{ items.user }}
+              </router-link>
+            </div>
+            <template slot="created">{{ items.time_ago }}</template>
+          </user-profile>
         </p>
       </small>
     </section>
@@ -22,7 +31,12 @@
 
 <script>
 import { mapState } from "vuex";
+import UserProfile from "../components/UserProfile.vue";
+
 export default {
+  components: {
+    UserProfile,
+  },
   computed: {
     // 방법1=>items(){
     // return this.$store.state.items

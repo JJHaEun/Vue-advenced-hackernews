@@ -2,8 +2,10 @@
   <div>
     <small>
       <i class="fa fa-user" aria-hidden="true"></i>
-      <p>{{ infoUser.id }}</p>
-      <p>{{ infoUser.created }}</p>
+      <!-- <p>{{ infoUser.id }}</p> -->
+      <slot name="username"></slot>
+      <slot name="created"></slot>
+      <!-- <p>{{ infoUser.created }}</p> -->
       <p>{{ infoUser.karma }}</p>
       <p>{{ infoUser.about }}</p>
     </small>
