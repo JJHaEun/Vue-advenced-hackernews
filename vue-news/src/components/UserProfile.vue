@@ -6,7 +6,10 @@
       <slot name="username"></slot>
       <slot name="created"></slot>
       <!-- <p>{{ infoUser.created }}</p> -->
-      <p>{{ infoUser.karma }}</p>
+
+      <!--  카르마가 있을때만  -->
+      <!-- <p>{{ infoUser.karma }}</p> -->
+      <slot name="karma"></slot>
       <p>{{ infoUser.about }}</p>
     </small>
   </div>

@@ -3,24 +3,24 @@
     <section>
       <!--  질문 상세정보 -->
       <h3>{{ items.title }}</h3>
-      <small>
-        <p>
-          {{ items.points }} points by
-          <!-- <i class="fa fa-user" aria-hidden="true"></i>
+      <div>
+        <small>
+          <span>
+            {{ items.points }} points by
+            <!-- <i class="fa fa-user" aria-hidden="true"></i>
           <router-link :to="`/user/${items.user}`">
             {{ items.user }}
              </router-link> -->
-          <!-- {{ items.time_ago }} -->
-          <user-profile :infoUser="items">
-            <div slot="username">
-              <router-link :to="`/user/${items.user}`">
+            <!-- {{ items.time_ago }} -->
+            <user-profile :infoUser="items">
+              <router-link slot="username" :to="`/user/${items.user}`">
                 {{ items.user }}
               </router-link>
-            </div>
-            <template slot="created">{{ items.time_ago }}</template>
-          </user-profile>
-        </p>
-      </small>
+              <template slot="created">{{ items.time_ago }}</template>
+            </user-profile>
+          </span>
+        </small>
+      </div>
     </section>
     <section>
       <!-- 답변  -->

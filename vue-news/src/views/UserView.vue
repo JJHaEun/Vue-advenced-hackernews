@@ -7,6 +7,7 @@
     <user-profile :infoUser="fetchUserInfo">
       <p slot="username">{{ fetchUserInfo.id }}</p>
       <p slot="created">{{ fetchUserInfo.created }}</p>
+      <template slot="karma">{{ fetchUserInfo.karma }}</template>
     </user-profile>
   </div>
 </template>
